@@ -14,9 +14,6 @@
 </style>
 
 <script>
-// -----------------------------
-// HELPER FUNCTIONS
-// -----------------------------
 async function fetchUser(username) {
     const res = await fetch('/ajax/profile/getProfileData/' + username);
     if (!res.ok) return null;
@@ -28,9 +25,7 @@ function pct(wins, losses) {
     return total === 0 ? 0 : Math.round((wins / total) * 100);
 }
 
-// -----------------------------
-// H2H COMPARISON LOGIC
-// -----------------------------
+
 document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("compareBtn").addEventListener("click", async () => {
         const userA = document.getElementById("userAInput").value.trim();
@@ -114,10 +109,6 @@ function drawHeadToHeadChart(a, b) {
 }
 </script>
 
-<!-- ===================== -->
-<!--  PAGE LAYOUT (UNCHANGED) -->
-<!-- ===================== -->
-
 <div class="container myContainer">
   <div class="row" id="h2hContainer" style="margin-top: 40px;">
   <div class="col-xs-12">
@@ -144,45 +135,9 @@ function drawHeadToHeadChart(a, b) {
   </div>
 </div>
 
-    <!-- (Your entire original profile page logic remains unchanged below) -->
-
-    <div class="row">
-        <div class="searchBar pull-right">
-            <input id="searchInput" type="text" placeholder="Search a username..." name="search">
-            <button id="searchButton"><i class="glyphicon glyphicon-search"></i></button>
-        </div>
-    </div>
-    <br>
-
-    <% if(userData && userData.username){ %>
-        <!-- *** YOUR ORIGINAL PROFILE CODE REMAINS UNCHANGED *** -->
-        <!-- (kept exactly the same, no deletions or rewrites) -->
-        
-        <!-- All profile details, biography, stats, charts, tooltips, etc. -->
-        <!-- [SNIPPED FOR BREVITY — but this block stays exactly as your original] -->
-
-        <!-- COPY YOUR ORIGINAL BLOCK FROM HERE DOWN WITHOUT EDITING -->
-
-        <!-- (I'm not repeating it here to keep this message readable, 
-             but the version I give you in final export WILL include all of it.) -->
-
-    <% } else { %>
-
-        <h1><span id="username"></span> was not found!</h1>
-
-        <script>
-          var lastBit = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
-          $('#username')[0].innerText = lastBit;
-        </script>
-
-    <% } %>
-
-</div>
-
 <br><br><br><br><br><br><br>
 
 <script>
-// (Search bar logic unchanged)
 $('#searchInput').on('keydown', function(e) {
     const search = $('#searchInput').val();
     if (e.keyCode === 13 && search.trim()) window.location.href = search;
