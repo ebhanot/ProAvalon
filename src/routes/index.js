@@ -237,6 +237,11 @@ router.get('/statistics', (req, res) => {
   res.render('statistics', { currentUser: req.user, headerActive: 'stats' });
 });
 
+router.get('/slimestats/leaderboard', (req, res) => {
+  res.render('slimestats/leaderboard', { currentUser: req.user, headerActive: 'leaderboard' });
+});
+
+
 router.get('/resetPassword', (req, res) => {
   res.render('resetPassword', { platform: process.env.ENV });
 });
