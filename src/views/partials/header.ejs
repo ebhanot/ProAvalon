@@ -68,6 +68,14 @@
 					<li><a href="/statistics">Stats</a></li>
 					<% } %>
 
+					<!-- Leaderboard -->
+					<% if(headerActive === "stats"){ %>
+					<li class="active"><a href="/statistics">Stats</a></li>
+					<%} %>
+					<% if(headerActive !== "stats"){ %>
+					<li><a href="/statistics">Stats</a></li>
+					<% } %>
+
 					<!-- Community dropdown -->
 					<!-- <li class="dropdown"> -->
 					<!-- 	<a class="dropdown-toggle wideNavbarLink" data-toggle="" role="button" aria-haspopup="true" aria-expanded="false">Community <span class="caret"></span></a> -->
